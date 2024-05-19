@@ -1,0 +1,31 @@
+{
+    "name": "sample-app-angularjs",
+    "description": "Sample app for UI-Router for AngularJS",
+    "version": "1.0.2",
+    "license": "MIT",
+  "dependencies": {
+    "angular": "1.8.x",
+    "angular-resource": "1.8.x",
+    "angular-route": "1.8.x",
+    "bootstrap": "3.3.x"
+  },
+  "devDependencies": {
+    
+    "http-server": "^0.11.1",
+    
+  },
+  "scripts": {
+    "postinstall": "npm run copy-libs",
+    "update-deps": "npm update",
+    "postupdate-deps": "npm run copy-libs",
+    "copy-libs": "cpx \"node_modules/{angular,angular-*,bootstrap/dist}/**/*\" lib -C",
+    "prestart": "npm install",
+    "start": "http-server . -a localhost -p 8000 -c-1",
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "npm test -- --single-run",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+   
+  }
+}
