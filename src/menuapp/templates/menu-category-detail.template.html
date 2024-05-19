@@ -1,4 +1,13 @@
 <a ui-sref="home">Home</a> &lt; <span>List</span>
 
 <h3>Welcome to our Detail Restaurant</h3>
-<div>{{ menuCategoryDetailCtrl.menuCategoryDetail }}</div>
+<table border="2" width="600">
+    <tr><td>
+<p>Name: {{ menuCategoryDetailCtrl.menuCategoryDetail.name }}</p>
+
+<p>Short Name: {{ menuCategoryDetailCtrl.menuCategoryDetail.short_name }}
+</p>
+
+<p>Special Instructions: {{ menuCategoryDetailCtrl.menuCategoryDetail.special_instructions }}
+</p>
+</td></tr></table>
