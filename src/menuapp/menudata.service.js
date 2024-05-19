@@ -20,14 +20,16 @@
             });
         };
 
-        service.getItemsForCategory = function(){
+        service.getItemsForCategory = function(itemIdx){
             console.log('in getItemsForCategory()' );
             return $http({
                 method: "GET",
                 url: (ApiBasePath + "/categories.json")
             }).then(function(response){
-                console.log('data: ', response.data);
-                return response.data[0];
+                console.log('data: ', response.data + 'itemIdx:'+ itemIdx);;
+                const idx = Number(itemIdx)
+                console.log('item: ', response.data[idx])
+                return response.data[idx];
             });
         };
     };

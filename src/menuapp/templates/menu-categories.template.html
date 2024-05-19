@@ -5,8 +5,7 @@
 <ul>
     <li ng-repeat="item in menuCategoriesCtrl.menuCategories">
         <a
-        ui-sref="menuCategoryDetail({itemName: item.name})">
-    {{ item.name }}of {{ item.short_name }} </a>
+        ui-sref="menuCategoryDetail({itemIdx: $index})">
+   {{$index}} {{item.id}} {{ item.name }}of {{ item.short_name }} </a>
     </li>
 </ul>
-<categories menuCategories="menuCategoriesCtrl.menuCategories"></categories>

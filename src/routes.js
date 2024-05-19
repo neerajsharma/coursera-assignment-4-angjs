@@ -38,16 +38,15 @@
         })
         // Premade list page
         .state('menuCategoryDetail', {
-            url: '/menu-category-detail/{itemName}',
+            url: '/menu-category-detail/{itemIdx}',
             templateUrl: 'src/menuapp/templates/menu-category-detail.template.html',
             controller: 'MenuCategoryDetailController as menuCategoryDetailCtrl',
-            params: {
-                itemName: null
-            },
+           
             resolve: {
-                menuCategoryDetail: ['MenuDataService', function (MenuDataService) {
-                    console.log('inside detail resolve');
-                    return MenuDataService.getItemsForCategory()
+                menuCategoryDetail: ['$stateParams','MenuDataService', function ($stateParams, MenuDataService) {
+                    console.log('inside detail resolve, itemIdx:')
+                    console.log($stateParams.itemIdx);
+                    return MenuDataService.getItemsForCategory($stateParams.itemIdx)
                         .then(function(response){
                             console.log('in detail then resolve' );
                             return response;
