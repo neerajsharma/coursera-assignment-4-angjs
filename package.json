@@ -10,8 +10,9 @@
     "bootstrap": "3.3.x"
   },
   "devDependencies": {
-    
-    "http-server": "^0.11.1",
+    "angular-mocks": "1.8.x",
+    "cpx": "^1.5.0",
+    "http-server": "^0.11.1"
     
   },
   "scripts": {
@@ -25,7 +26,7 @@
     "test": "karma start karma.conf.js",
     "test-single-run": "npm test -- --single-run",
     "preupdate-webdriver": "npm install",
-    "update-webdriver": "webdriver-manager update",
+    "update-webdriver": "webdriver-manager update"
    
   }
 }
