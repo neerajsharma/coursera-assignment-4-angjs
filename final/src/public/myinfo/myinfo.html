@@ -1,0 +1,33 @@
+<div class="container">
+    <h2 id="menu-categories-title" class="text-center">My Infos</h2>
+   
+  <div>
+   <table border = 1>
+    <tr>
+        <td>First Name: </td> <td> <span>{{ myinfoPrefs.firstName }}</span></td>
+    </tr>
+    <tr>
+        <td>Last Name: </td> <td> <span>{{ myinfoPrefs.lastName }}</span></td>
+    </tr>
+    <tr>
+        <td>Email: </td> <td> <span>{{ myinfoPrefs.email }}</span></td>
+    </tr>
+    <tr>
+        <td>Phone: </td> <td> <span>{{ myinfoPrefs.phone }}</span></td>
+    </tr>
+    <tr>
+        <td>Fav menu short name: </td> <td> <span>{{ myinfoPrefs.shortname }}</span></td>
+    </tr>
+   </table>
+</div>
+   <div>
+
+   </div>
+      
+      <p>Fav Item Title : </p> <span>{{ myinfoPrefs.fav_title }}</span>
+      <p>Fav Item Description : </p> <span>{{ myinfoPrefs.fav_description }}</span>
+     
+      <img src="{{ myinfoPrefs.fav_img_url }}" alt="Fav Item Image"/>
+   </div>
+  
+  </div>

@@ -23,6 +23,9 @@
                 }
                 $scope.errorMessage = 'valid message: ' + short_name + " # " + menu_num;
                 var url =  "https://coursera-jhu-default-rtdb.firebaseio.com/menu_items/"+  short_name +"/menu_items/"+ menu_num+".json"
+                $scope.fav_img_url =  "http://" + window.location.host + "/images/menu/" + short_name + "/" + input + ".jpg";
+                console.log($scope.fav_img_url);
+                $scope.menu_num = menu_num;
                 console.log(url)
                 $http.get(url)
                 .then(function(response){
@@ -33,7 +36,9 @@
                         lastName: $scope.user.lastName,
                         email: $scope.user.email,
                         phone: $scope.user.phone,
-                        short_name: $scope.user.short_name,
+                        fav_title: response.data["name"],
+                        fav_description: response.data["description"],
+                        fav_img_url: $scope.fav_img_url
                         
                     }
                     MenuService.saveSignupPref(preferences)

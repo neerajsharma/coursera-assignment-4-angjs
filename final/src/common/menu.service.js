@@ -27,7 +27,8 @@ function MenuService($http, ApiPath) {
     preferences = newPreferences;
     console.log(preferences);
   };
-  service.getSignupPref = function() {
+  service.getSignupPrefs = function() {
+    console.log(preferences);
     return preferences;
   }
 }
