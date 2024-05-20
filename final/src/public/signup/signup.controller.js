@@ -28,7 +28,16 @@
                 .then(function(response){
                     // Ensure a valid response
                 if (response.status === 200 && response.data) {
-                    MenuService.saveSignupPref(JSON.stringify(response.data, null, 2))
+                    const preferences = {
+                        firstName: $scope.user.firstName,
+                        lastName: $scope.user.lastName,
+                        email: $scope.user.email,
+                        phone: $scope.user.phone,
+                        short_name: $scope.user.short_name,
+                        
+                    }
+                    MenuService.saveSignupPref(preferences)
+                    console.log(preferences)
                     $scope.responseData = "Your information has been saved."
                     $scope.errorMessage = '';
                 } else {
