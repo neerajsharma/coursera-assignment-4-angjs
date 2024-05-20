@@ -1,4 +1,5 @@
 <div class="container">
+    <div ng-if="showprefs">
     <h2 id="menu-categories-title" class="text-center">My Infos</h2>
    
   <div>
@@ -15,19 +16,21 @@
     <tr>
         <td>Phone: </td> <td> <span>{{ myinfoPrefs.phone }}</span></td>
     </tr>
-    <tr>
-        <td>Fav menu short name: </td> <td> <span>{{ myinfoPrefs.shortname }}</span></td>
-    </tr>
+    
    </table>
 </div>
    <div>
 
-   </div>
+   
       
-      <p>Fav Item Title : </p> <span>{{ myinfoPrefs.fav_title }}</span>
-      <p>Fav Item Description : </p> <span>{{ myinfoPrefs.fav_description }}</span>
+      <p>Fav Item Title :  {{ myinfoPrefs.fav_title }}</p>
+      <p>Fav Item Description :  {{ myinfoPrefs.fav_description }}</p>
      
       <img src="{{ myinfoPrefs.fav_img_url }}" alt="Fav Item Image"/>
    </div>
-  
+  </div>
+  <div ng-if="!showprefs">
+    Not Signed up Yet. <a ui-sref="public.signup"> Sign up Now! </a>
+  </div>
+
   </div>
